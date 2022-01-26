@@ -50,7 +50,7 @@
         <property name="entityManagerFactory" ref="emf"/>
     </bean>
 
-    <tx:annotation-driven transaction-manager="transactionManager" />
+    <!--tx:annotation-driven transaction-manager="transactionManager" /-->
 
     <context:component-scan base-package="com.bfrcom.DAO"/>
 
