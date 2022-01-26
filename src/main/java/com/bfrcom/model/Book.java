@@ -7,12 +7,9 @@ import javax.persistence.*;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
-@NamedQueries({
-        @NamedQuery(name="Course.findAll", 	query="select с from Book с")
-})
 
 @Entity
-@Table(name="book", schema= "test")
+@Table(name="book", schema = "test")
 public class Book {
 
     @Setter

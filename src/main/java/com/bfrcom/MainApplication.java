@@ -18,7 +18,12 @@ public class MainApplication {
 
         SpringApplication.run(MainApplication.class, args);
 
-       /* for(Book b : bookDAO.findAll())
-            System.out.println(b);*/
+        ClassPathXmlApplicationContext context =
+                new ClassPathXmlApplicationContext("applicationContext.xml");
+
+        BookDAO bookDAO = context.getBean("BookDAOImplement", BookDAO.class);
+
+        for(Book b : bookDAO.findAll())
+            System.out.println(b);
     }
 }

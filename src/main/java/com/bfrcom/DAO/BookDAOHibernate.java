@@ -26,13 +26,13 @@ public class BookDAOHibernate implements BookDAO {
         return query.getSingleResult();
     }
 
-   /* @Transactional(readOnly=true)
+    @Transactional(readOnly=true)
     public List<Book> findAll() {
         return em.createQuery("select с from Book с",
                 Book.class).getResultList();
     }
 
-    @Override
+   /* @Override
     public void insert(Book book) {
         em.persist(book);
     }
