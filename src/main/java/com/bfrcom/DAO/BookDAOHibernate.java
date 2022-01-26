@@ -1,4 +1,4 @@
-/*package com.bfrcom.DAO;
+package com.bfrcom.DAO;
 
 import com.bfrcom.model.Book;
 import org.springframework.stereotype.Repository;
@@ -26,7 +26,7 @@ public class BookDAOHibernate implements BookDAO {
         return query.getSingleResult();
     }
 
-    @Transactional(readOnly=true)
+   /* @Transactional(readOnly=true)
     public List<Book> findAll() {
         return em.createQuery("select с from Book с",
                 Book.class).getResultList();
@@ -46,6 +46,5 @@ public class BookDAOHibernate implements BookDAO {
     @Override
     public void delete(int id) {
         em.remove(em.find(Book.class, id));
-    }
+    }*/
 }
-*/
