@@ -1,0 +1,72 @@
+GET http://localhost:8080/book
+
+<> 2022-01-27T131306.200.json
+
+###
+
+GET http://localhost:8080/book
+
+<> 2022-01-27T131256.200.json
+
+###
+
+GET http://localhost:8080/book
+
+<> 2022-01-27T131226.404.json
+
+###
+
+GET http://localhost:8080/hi2
+
+###
+
+GET http://localhost:8080/hi
+
+###
+
+GET http://localhost:8080/hi
+
+###
+
+GET http://localhost:8080/hi
+
+###
+
+GET http://localhost:8080/hi2
+
+###
+
+GET http://localhost:8080/hi2
+
+<> 2022-01-26T132859.200.html
+
+###
+
+GET http://localhost:8080/hi2
+
+<> 2022-01-26T124920.200.html
+
+###
+
+GET http://localhost:8080/hi2
+
+<> 2022-01-23T112312.200.html
+
+###
+
+GET http://localhost:8080/hi2
+
+###
+
+GET http://localhost:8080/hi
+
+<> 2022-01-23T110100.200.txt
+
+###
+
+GET http://localhost:8080/hi
+
+<> 2022-01-23T105718.404.json
+
+###
+
