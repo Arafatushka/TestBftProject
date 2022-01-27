@@ -13,20 +13,20 @@ import java.util.List;
 @Service
 @Repository
 @Transactional
-public class BookDAOHibernate implements BookDAO {
+public class BookDAOImplementation implements BookDAO {
 
     @PersistenceContext
     private EntityManager em;
 
-    @Transactional(readOnly=true)
+    @Transactional(readOnly = true)
     public Book findById(Integer id) {
         TypedQuery<Book> query = em.createQuery(
                 "select c from Book c where c.id=:id", Book.class);
-        query.setParameter ( "id", id) ;
+        query.setParameter("id", id);
         return query.getSingleResult();
     }
 
-    @Transactional(readOnly=true)
+    @Transactional(readOnly = true)
     public List<Book> findAll() {
         return em.createQuery("select с from Book с",
                 Book.class).getResultList();
@@ -39,7 +39,7 @@ public class BookDAOHibernate implements BookDAO {
 
     @Override
     public Book update(Book book) {
-        if (book.getId()!=0 && em.find(Book.class, book.getId())!=null)
+        if (book.getId() != 0 && em.find(Book.class, book.getId()) != null)
             em.merge(book);
         return book;
     }

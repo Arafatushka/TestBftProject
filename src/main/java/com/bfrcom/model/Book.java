@@ -7,21 +7,29 @@ import javax.persistence.*;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
-
 @Entity
-@Table(name="book", schema = "test")
+@Table(name = "book", schema = "test")
 public class Book {
 
     @Setter
     @Getter
     @Id
     @GeneratedValue(strategy = IDENTITY)
-    @Column (name = "id")
+    @Column(name = "id")
     public Long id;
 
-    @Column (name = "name")
+    @Column(name = "name")
     public String name;
 
-    @Column (name = "year")
+    @Column(name = "author")
+    public String author;
+
+    @Column(name = "year")
     public Integer year;
+
+    @Column(name = "description")
+    public String description;
+
+    @Column(name = "userUploadId")
+    public Long userUploadId;
 }

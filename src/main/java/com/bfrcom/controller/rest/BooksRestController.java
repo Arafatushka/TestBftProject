@@ -1,4 +1,4 @@
-package com.bfrcom.controller;
+package com.bfrcom.controller.rest;
 
 import com.bfrcom.DAO.BookDAO;
 import com.bfrcom.model.Book;
@@ -9,7 +9,7 @@ import java.util.List;
 
 @org.springframework.web.bind.annotation.RestController()
 @RequestMapping("api/book")
-public class RestController {
+public class BooksRestController {
 
     @Autowired
     BookDAO bookDAO;
