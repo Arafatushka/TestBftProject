@@ -1,46 +1,47 @@
 package com.bfrcom.controller.rest;
 
-import com.bfrcom.DAO.BookDAO;
-import com.bfrcom.model.Book;
+import com.bfrcom.DAO.ImageDAO;
+import com.bfrcom.DAO.ImageDAO;
+import com.bfrcom.model.Image;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@org.springframework.web.bind.annotation.RestController()
-@RequestMapping("api/book")
-public class BooksRestController {
+@RestController()
+@RequestMapping("api/image")
+public class ImagesRestController {
 
     @Autowired
-    BookDAO bookDAO;
+    ImageDAO imageDAO;
 
     @ResponseBody
     @RequestMapping(method = RequestMethod.GET)
-    public List<Book> list() {
-        return bookDAO.findAll();
+    public List<Image> list() {
+        return imageDAO.findAll();
     }
 
     @ResponseBody
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public Book findById(@PathVariable int id) {
-        return bookDAO.findById(id);
+    public Image findById(@PathVariable int id) {
+        return imageDAO.findById(id);
     }
 
     @ResponseBody
     @RequestMapping(value = "/", method = RequestMethod.POST)
-    public Book create(@RequestBody Book book) {
-        return bookDAO.update(book);
+    public Image create(@RequestBody Image image) {
+        return imageDAO.update(image);
     }
 
     @ResponseBody
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-    public Book update(@RequestBody Book book, @PathVariable int id) {
-        return bookDAO.update(book);
+    public Image update(@RequestBody Image image, @PathVariable int id) {
+        return imageDAO.update(image);
     }
 
     @ResponseBody
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public void delete(@PathVariable int id) {
-        bookDAO.delete(id);
+        imageDAO.delete(id);
     }
 }

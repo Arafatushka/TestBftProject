@@ -32,4 +32,10 @@ public class Book {
 
     @Column(name = "userUploadId")
     public Long userUploadId;
+
+    @Column(name = "coverImageId")
+    public Long coverImageId;
+
+    @Column(name = "pdfId")
+    public Long pdfId;
 }
