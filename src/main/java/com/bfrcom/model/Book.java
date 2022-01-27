@@ -18,24 +18,38 @@ public class Book {
     @Column(name = "id")
     public Long id;
 
+    @Setter
+    @Getter
     @Column(name = "name")
     public String name;
 
+    @Setter
+    @Getter
     @Column(name = "author")
     public String author;
 
+    @Setter
+    @Getter
     @Column(name = "year")
     public Integer year;
 
+    @Setter
+    @Getter
     @Column(name = "description")
     public String description;
 
+    @Setter
+    @Getter
     @Column(name = "userUploadId")
     public Long userUploadId;
 
+    @Setter
+    @Getter
     @Column(name = "coverImageId")
     public Long coverImageId;
 
+    @Setter
+    @Getter
     @Column(name = "pdfId")
     public Long pdfId;
 }
