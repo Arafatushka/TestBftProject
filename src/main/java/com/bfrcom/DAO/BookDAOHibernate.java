@@ -10,7 +10,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
-@Service("BookDAOImplement")
+@Service
 @Repository
 @Transactional
 public class BookDAOHibernate implements BookDAO {
@@ -32,7 +32,7 @@ public class BookDAOHibernate implements BookDAO {
                 Book.class).getResultList();
     }
 
-   /* @Override
+    @Override
     public void insert(Book book) {
         em.persist(book);
     }
@@ -46,5 +46,5 @@ public class BookDAOHibernate implements BookDAO {
     @Override
     public void delete(int id) {
         em.remove(em.find(Book.class, id));
-    }*/
+    }
 }
