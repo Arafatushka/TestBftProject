@@ -19,7 +19,7 @@ public class BookDAOHibernate implements BookDAO {
     private EntityManager em;
 
     @Transactional(readOnly=true)
-    public Book findById(Long id) {
+    public Book findById(Integer id) {
         TypedQuery<Book> query = em.createQuery(
                 "select c from Book c where c.id=:id", Book.class);
         query.setParameter ( "id", id) ;
@@ -38,9 +38,10 @@ public class BookDAOHibernate implements BookDAO {
     }
 
     @Override
-    public void update(Book book) {
+    public Book update(Book book) {
         if (book.getId()!=0 && em.find(Book.class, book.getId())!=null)
             em.merge(book);
+        return book;
     }
 
     @Override
