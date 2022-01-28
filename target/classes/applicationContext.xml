@@ -3,10 +3,13 @@
        xmlns:p="http://www.springframework.org/schema/p"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:s="http://www.springframework.org/schema/security"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context
-       http://www.springframework.org/schema/context/spring-context.xsd">
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/security
+       http://www.springframework.org/schema/security/spring-security.xsd">
 
     <context:property-placeholder
             location="classpath:db.properties"/>
@@ -49,4 +52,20 @@
 
     <context:component-scan base-package="com.bfrcom.DAO"/>
 
+    <s:http use-expressions="true">
+        <s:intercept-url pattern="/*" access="permitAll"/>
+        <s:form-login login-page="/"
+                      authentication-failure-url="/security/loginfail"
+                      default-target-url="/"/>
+        <s:logout logout-success-url="/"/>
+    </s:http>
+    <s:authentication-manager>
+        <s:authentication-provider>
+            <s:user-service>
+                <s:user name="user" password="pass" authorities="ROLE_USER"/>
+                <s:user name="user2" password="pass" authorities="ROLE_USER"/>
+                <s:user name="admin" password="admin" authorities="ROLE_ADMIN"/>
+            </s:user-service>
+        </s:authentication-provider>
+    </s:authentication-manager>
 </beans>

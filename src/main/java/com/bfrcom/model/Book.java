@@ -53,4 +53,10 @@ public class Book {
     @Getter
     @Column(name = "pdfId")
     public Long pdfId;
+
+    @Override
+    public String toString() {
+        return String.format("%d %s %s",
+                getId(), getName(), getDescription());
+    }
 }

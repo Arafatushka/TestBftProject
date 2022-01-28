@@ -7,6 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.web.filter.DelegatingFilterProxy;
+
+import javax.servlet.Filter;
 
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class })
 @ImportResource("classpath:applicationContext.xml")
