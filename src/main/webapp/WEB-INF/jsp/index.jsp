@@ -19,18 +19,21 @@
             <td>Название</td>
             <td>Автор</td>
             <td>Описание</td>
-
+            <td></td>
+            <td></td>
         </tr>
         <c:forEach items="${books}" var="book">
             <tr>
                 <td>${book.name}</td>
                 <td>${book.author}</td>
                 <td>${book.description}</td>
+                <td><a href="update/${book.id}">Изменить</a></td>
+                <td><a href="delete/${book.id}">Удалить</a></td>
 
             </tr>
         </c:forEach>
     </table>
 </c:if>
-
+<a href="update/0">Добавить</a>
 </body>
 </html>

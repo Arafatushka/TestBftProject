@@ -22,7 +22,7 @@ public class BooksRestController {
 
     @ResponseBody
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public Book findById(@PathVariable int id) {
+    public Book findById(@PathVariable Long id) {
         return bookDAO.findById(id);
     }
 
@@ -40,7 +40,7 @@ public class BooksRestController {
 
     @ResponseBody
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public void delete(@PathVariable int id) {
+    public void delete(@PathVariable Long id) {
         bookDAO.delete(id);
     }
 }

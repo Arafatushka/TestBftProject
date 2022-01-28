@@ -5,7 +5,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
-import static javax.persistence.GenerationType.IDENTITY;
+import static javax.persistence.GenerationType.*;
 
 @Entity
 @Table(name = "book", schema = "test")
@@ -14,7 +14,8 @@ public class Book {
     @Setter
     @Getter
     @Id
-    @GeneratedValue(strategy = IDENTITY)
+    @SequenceGenerator(name="book_seq", allocationSize = 1, sequenceName = "test.book_seq")
+    @GeneratedValue(strategy = SEQUENCE)
     @Column(name = "id")
     public Long id;
 

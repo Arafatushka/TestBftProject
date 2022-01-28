@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface BookDAO {
 
-    Book findById(Integer id);
+    Book findById(Long id);
 
     List<Book> findAll();
 
@@ -14,5 +14,5 @@ public interface BookDAO {
 
     Book update(Book book);
 
-    void delete(int id);
+    void delete(Long id);
 }
