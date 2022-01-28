@@ -26,9 +26,13 @@ public class User {
     @Column(name = "name")
     public String name;
 
+    @Setter
+    @Getter
     @Column(name = "surname")
     public String surname;
 
+    @Setter
+    @Getter
     @Column(name = "lastLoginDate")
     public Date lastLoginDate;
 }

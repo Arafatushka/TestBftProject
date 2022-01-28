@@ -19,6 +19,8 @@ public class Image {
     @Column(name = "id")
     public long id;
 
+    @Setter
+    @Getter
     @Column(name = "blob")
     public byte [] blob;
 }
