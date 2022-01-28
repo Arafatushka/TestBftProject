@@ -29,7 +29,6 @@
                 <td>${book.description}</td>
                 <td><a href="update/${book.id}">Изменить</a></td>
                 <td><a href="delete/${book.id}">Удалить</a></td>
-
             </tr>
         </c:forEach>
     </table>
