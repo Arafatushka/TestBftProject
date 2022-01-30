@@ -24,21 +24,21 @@ public class MvcController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String list(Model uiModel) {
-        List<Book> books = bookDAO.findAll();
+        var books = bookDAO.findAll();
         uiModel.addAttribute("books", books);
         return "index";
     }
 
     @RequestMapping(value = "delete/{id}", method = RequestMethod.GET)
     public String delete(@PathVariable("id") Long id, Model uiModel) {
-        if (bookDAO.findById(id) != null)
+        if (bookDAO.findOne(id) != null)
             bookDAO.delete(id);
         return "redirect:/";
     }
 
     @RequestMapping(value = "update/{id}", method = RequestMethod.GET)
     public String updateForm(@PathVariable("id") Long id, Model uiModel) {
-        uiModel.addAttribute("book", bookDAO.findById(id));
+        uiModel.addAttribute("book", bookDAO.findOne(id));
         return "edit";
     }
 
@@ -56,7 +56,7 @@ public class MvcController {
             uiModel.addAttribute("book", book);
             return "update";
         }
-        bookDAO.update(book);
+        bookDAO.save(book);
         return "redirect:/";
     }
 

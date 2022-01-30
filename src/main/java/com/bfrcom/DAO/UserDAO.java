@@ -1,18 +1,8 @@
 package com.bfrcom.DAO;
 
 import com.bfrcom.model.User;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.QueryByExampleExecutor;
 
-import java.util.List;
-
-public interface UserDAO {
-
-    User findByName(String name);
-
-    List<User> findAll();
-
-    void insert(User course);
-
-    User update(User course);
-
-    void delete(String name);
+public interface UserDAO extends CrudRepository<User, Long>, QueryByExampleExecutor<User> {
 }

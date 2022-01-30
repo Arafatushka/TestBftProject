@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+import static com.google.common.collect.Lists.newArrayList;
+
 @org.springframework.web.bind.annotation.RestController()
 @RequestMapping("api/book")
 public class BooksRestController {
@@ -17,25 +19,25 @@ public class BooksRestController {
     @ResponseBody
     @RequestMapping(method = RequestMethod.GET)
     public List<Book> list() {
-        return bookDAO.findAll();
+        return newArrayList(bookDAO.findAll());
     }
 
     @ResponseBody
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public Book findById(@PathVariable Long id) {
-        return bookDAO.findById(id);
+        return bookDAO.findOne(id);
     }
 
     @ResponseBody
     @RequestMapping(value = "/", method = RequestMethod.POST)
     public Book create(@RequestBody Book book) {
-        return bookDAO.update(book);
+        return bookDAO.save(book);
     }
 
     @ResponseBody
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
     public Book update(@RequestBody Book book, @PathVariable int id) {
-        return bookDAO.update(book);
+        return bookDAO.save(book);
     }
 
     @ResponseBody

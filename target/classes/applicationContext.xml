@@ -59,7 +59,6 @@
                       login-processing-url="/j_spring_security_check"
                       default-target-url="/"/>
         <s:logout logout-success-url="/"/>
-        
     </s:http>
     <s:authentication-manager>
         <s:authentication-provider>
