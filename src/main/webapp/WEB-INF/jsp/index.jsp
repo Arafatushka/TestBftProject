@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="s" uri="http://www.springframework.org/security/tags" %>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,6 +37,7 @@
             <s:authorize access="hasRole('ROLE_USER')">
                 <td></td>
                 <td></td>
+                <td></td>
             </s:authorize>
         </tr>
         <c:forEach items="${books}" var="book">
@@ -45,6 +48,12 @@
                 <s:authorize access="hasRole('ROLE_USER')">
                     <td><a href="update/${book.id}">Изменить</a></td>
                     <td><a href="delete/${book.id}">Удалить</a></td>
+                    <td>
+                        <form action = "UploadServlet" method = "post" enctype = "multipart/form-data">
+                            <input type = "file" name = "file" size = "50" />
+                            <input type = "submit" value = "Upload File" />
+                        </form>
+                    </td>
                 </s:authorize>
             </tr>
         </c:forEach>
@@ -53,5 +62,6 @@
 <s:authorize access="hasRole('ROLE_USER')">
     <a href="update/0">Добавить книгу</a>
 </s:authorize>
+
 </body>
 </html>

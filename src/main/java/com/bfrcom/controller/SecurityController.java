@@ -13,5 +13,4 @@ public class SecurityController {
         System.out.println("login failed");
         return "index";
     }
-
 }
